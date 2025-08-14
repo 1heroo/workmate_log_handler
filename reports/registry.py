@@ -1,5 +1,5 @@
-from .average import AverageResponseTimeReport
-from .useragent import UserAgentReport
+from reports.average import AverageResponseTimeReport
+from reports.user_agent import UserAgentReport
 
 
 # report registry

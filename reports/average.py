@@ -1,4 +1,4 @@
-from .base import Report
+from reports.base import Report
 import pandas as pd
 
 

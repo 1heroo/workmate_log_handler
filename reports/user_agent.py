@@ -1,4 +1,4 @@
-from .base import Report
+from reports.base import Report
 import pandas as pd
 
 
@@ -10,4 +10,5 @@ class UserAgentReport(Report):
         return cls.NAME
     
     def generate(self, df: pd.DataFrame) -> pd.DataFrame:
-        ... 
+        ...
+

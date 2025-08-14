@@ -1,27 +1,8 @@
 import argparse
-import json
 from tabulate import tabulate
 import pandas as pd
-from reports import get_report_registry
+from reports import get_report_registry, parse_logs 
 
-
-
-def parse_logs(files: list[str], date_filter=None) -> list[dict]:
-    """log parsing and filtering by date func"""
-    entries = []
-    for file in files:
-        with open(file, "r", encoding="utf-8") as f:
-            for line in f.readlines():
-                try:
-                    log = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                if date_filter:
-                    log_date = log.get("@timestamp", "").split("T")[0]
-                    if log_date != date_filter:
-                        continue
-                entries.append(log)
-    return entries
 
 
 def main():
