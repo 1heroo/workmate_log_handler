@@ -8,7 +8,7 @@ from reports import get_report_registry, parse_logs
 def main():
     parser = argparse.ArgumentParser(description="Log report")
     parser.add_argument("--file", nargs="+", required=True, help="Paths to log files")
-    parser.add_argument("--report", required=True, choices=["average"], help="Report type")
+    parser.add_argument("--report", required=True, choices=["average", 'user_agent'], help="Report type")
     parser.add_argument("--date", help="Filter logs by date (YYYY-MM-DD)")
     args = parser.parse_args()
 
@@ -33,4 +33,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
